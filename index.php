@@ -47,7 +47,7 @@ include "includes/filter.php";
                 //de variabele $tblCottages vullen met de data uit de database (array) hiervoor de functie getData gebruiken uit functions.php
                 //$tblCottages uncommenten als functions.php af is en is ge-include op regel 4 en de sql statement op regel 19 klopt
                 $tblCottages = getData($sql, "fetchAll");
-                print_r($tblCottages);
+               
             ?>
 
             <?php
@@ -62,10 +62,12 @@ include "includes/filter.php";
             <?php } //einde if
             else { //count($tblCottages) > 0 ?>
             <!-- als er wel resultaat is of als er niet gefiltert is de huisjes laten zien -->
-                <?php // start loop door array met cottages uit db gegevens ?>
+                <?php foreach ($tblCottages as $cottage) {?>
+                    
+                
                 <div class="col-12 col-md-4 mb-4 d-flex align-self-stretch">
                     <div class="card">
-                        <img class="card-img-top" src="../blok4-eindopdracht-challenge/images/<?php echo $cottage["cottage_img"];?>" alt="cottage_name"><!-- maak image en naam dynamisch -->
+                        <img class="card-img-top" src="../eindopdracht-blok4-echte-echte/images/<?php echo $cottage["cottage_img"];?>" alt="cottage_name"><!-- maak image en naam dynamisch -->
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $cottage["cottage_name"]; ?></h5> <!-- maak naam dynamisch -->
                                 <p class="card-text"><?php echo $cottage["cottage_descr"];?></p> <!-- maak omschrijving dynamisch -->
@@ -77,7 +79,7 @@ include "includes/filter.php";
                             </div>
                         </div>
                     </div>
-                <?php //einde loop door array cottages uit db gegevens ?>
+                <?php } ?>
             <?php } //einde if, else count ?>
         </div>
     </div>

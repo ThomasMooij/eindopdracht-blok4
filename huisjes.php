@@ -1,11 +1,9 @@
 <?php 
 include "includes/database.php";
-// include "header.php";
-// include "menu.php";
 include "includes/functions.php";
-?>
+include "header.php";
 
-<?php
+
 $huisjeID = $_GET["cottageID"];
 
 if ($huisjeID < 1 ){
@@ -18,9 +16,6 @@ $sql = "SELECT * FROM `cottages` WHERE cottage_id = $huisjeID; ";
 
 
 $tblCottage= getData($sql , "fetch");
-
-// print_r($tblCottage);
-
 ?> 
     
     <section>
@@ -64,7 +59,7 @@ $tblCottage= getData($sql , "fetch");
     <div class="container mt-4 bg-light">
         <div class="row  px-4 py-4">
             <div class="col">
-            faciliteiten (aparte file in includes)
+            <?php include "includes/facilities.php"; ?>
             </div>
 
             <div class="col">
@@ -76,8 +71,9 @@ $tblCottage= getData($sql , "fetch");
             </div>
 
             <div class="col">
-                additions (aparte file in includes)
+                <?php include "includes/additions.php"; ?> 
             </div>
+            <?php include 'includes/calculateprice.php'; ?>
         </div>
     </div>
 </section>

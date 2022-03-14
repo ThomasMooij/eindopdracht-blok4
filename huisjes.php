@@ -4,15 +4,15 @@ include "includes/functions.php";
 include "header.php";
 
 
-$huisjeID = $_GET["cottageID"];
+$cottageID = $_GET["cottageID"];
 
-if ($huisjeID < 1 ){
+if ($cottageID < 1 ){
    die ('Geen huisje geselecteerd');
 };
 
 // echo $huisjeID;
 
-$sql = "SELECT * FROM `cottages` WHERE cottage_id = $huisjeID; ";
+$sql = "SELECT * FROM `cottages` WHERE cottage_id = $cottageID; ";
 
 
 $tblCottage= getData($sql , "fetch");

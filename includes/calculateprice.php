@@ -23,7 +23,7 @@ if(isset($_POST["calculate"])){
 if(isset($_POST["numberNights"])){
     $numberNights = $_POST["numberNights"];
 }
-
+echo $numberNights;
 if(isset($_POST["numberAdults"])){
     $numberAdults = $_POST["numberAdults"];
 }
@@ -41,7 +41,8 @@ if(isset($_POST["additions"])){
 <section>
 <div class="container mt-4 mb-4 bg-light border border-info">
     <!-- het formulier vullen met de juiste velden -->
-    <form name="calculate" method="post" action="huisjes.php?<?php echo $cottageID;?>">
+    <form name="calculate" method="post" action="huisjes.php?cottageID=<?php echo $cottageID;?>">
+                                               
         <div class="row px-4 py-4">
             <div class="col-12 mb-4">
                 <h2>Bereken prijs</h2>
@@ -129,9 +130,9 @@ if($calcPrice == true){
     //prijs voor volwassenen
     $totalPriceA =  ($numberAdults * $numberNights) * $CottagePriceA;
     //CHECK prijs voor kinderen, berekening nog maken!
-    $totalPriceC =  0;
+    $totalPriceC =  ($numberChilds *$numberNights) *  $CottagePriceC;
     //CHECK alle additions * aantal dagen/nachten nog berekenen
-    $totalAdditions =  0;
+    $totalAdditions =  ($totalAdditions * $numberNights);
 
     ?>
 <section>
@@ -151,7 +152,7 @@ if($calcPrice == true){
                         <tr>
                             <!-- CHECK het is eigenlijk wel handig om de prijs goed op te schrijven met een , en twee cijfers achter de komma, ik hebt het hier alvast neergezet maar moet nog wel de functie FormatNumber() afmaken, dit geeft nu natuurlijk een foutmelding... -->
                             <td>Prijs volwassenen (<?php echo $numberAdults ."x &euro;".  FormatNumber($CottagePriceA) ."x". $numberNights; ?>)</td>
-                            <td>&euro; <?php echo $totalPriceA ?></td>
+                            <td>&euro; <?php echo FormatNumber($totalPriceA) ?></td>
                         </tr>
                         <tr>
                             <td>Prijs kinderen (<?php echo $numberChilds ."x &euro;".  FormatNumber($CottagePriceC) ."x". $numberNights; ?>)</td>

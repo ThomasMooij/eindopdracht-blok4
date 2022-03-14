@@ -75,7 +75,7 @@ include "includes/filter.php";
                                     <li class="list-group-item"><?php $cottage["cottage_price_a"];?></li><!-- maak prijs volwassenen dynamisch -->
                                     <li class="list-group-item"><?php $cottage["cottage_price_c"];?></li><!-- maak prijs kinderen dynamisch -->
                                 </ul>
-                                <a href="huisjes.php?cottageID=<?php echo $cottage["cottage_id"]; ?>" class="btn btn-secondary mt-2">Lees meer...</a><!-- maak href dynamisch -->
+                                <a href="huisjes.php?cottageID=<?php echo $cottage["cottage_id"]; ?>" class="btn btn-secondary mt-2 stretched-link">Lees meer...</a><!-- maak href dynamisch  streched-link used to make entire thing clickable-->
                             </div>
                         </div>
                     </div>

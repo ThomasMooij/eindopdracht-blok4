@@ -11,8 +11,8 @@ $additionNames = "";
 $AmountAdd = [];
 
 //variabelen voor de prijzen
-$CottagePriceA = $tblCottage["cottage_price_a"];
-$CottagePriceC = $tblCottage["cottage_price_c"];
+$CottagePriceA = $cottage["cottage_price_a"];
+$CottagePriceC = $cottage["cottage_price_c"];
 
 //Checken of velden van de form calculate gesubmit zijn en iemand de prijs wil berekenen
 //en natuurlijk variabelen de juiste waarde geven
@@ -113,7 +113,7 @@ if($calcPrice == true){
         if($counter < count($selAdditions)) {$additionNames .= ", ";}
 
         //CHECK de totaalprijs van alle additions bij elkaar berekenen, nu maar even alleen een neerzetten nog toevoegen dat hij ze allemaal optelt
-        $totalAdditions = $value * $AmountAdd[$key];
+        $totalAdditions += $value * $AmountAdd[$key];
 
         $counter++;
     }
@@ -124,8 +124,8 @@ if($calcPrice == true){
     }
 
    //prijzen ophalen $tblCottage is gevuld in huisjes.php dus ik had het ook daar kunnen aanmaken, check of dit handig is
-    $CottagePriceA = $tblCottage["cottage_price_a"];
-    $CottagePriceC = $tblCottage["cottage_price_c"];
+    $CottagePriceA = $cottage["cottage_price_a"];
+    $CottagePriceC = $cottage["cottage_price_c"];
 
     //prijs voor volwassenen
     $totalPriceA =  ($numberAdults * $numberNights) * $CottagePriceA;

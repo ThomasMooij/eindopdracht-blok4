@@ -26,7 +26,7 @@ $tblCottage= getData($sql , "fetch");
                 <div id="carouselExampleControls" class="carousel slide pointer-event" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item">
-                    <img src="../eindopdracht-blok4-echte-echte/images/<?php echo $tblCottage["cottage_img"];?>" class="d-block w-100" alt=<?php  echo $tblCottage["cottage_img"]?>><!--src en alt dynamisch maken -->
+                    <img src="../eindopdracht-blok4-echte-echte/images//<?php echo $tblCottage["cottage_img"];?>" class="d-block w-100" alt=<?php  echo $tblCottage["cottage_img"]?>><!--src en alt dynamisch maken -->
                     </div>
                     <div class="carousel-item active">
                     <img src="../eindopdracht-blok4-echte-echte/images/<?php echo $tblCottage["cottage_img2"];?>"  class="d-block w-100" alt=<?php  echo $tblCottage["cottage_img2"]?>><!--src en alt dynamisch maken -->

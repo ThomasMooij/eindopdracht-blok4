@@ -67,7 +67,7 @@ include "includes/filter.php";
                 
                 <div class="col-12 col-md-4 mb-4 d-flex align-self-stretch">
                     <div class="card">
-                        <img class="card-img-top" src="../eindopdracht-blok4-echte-echte/images/<?php echo $cottage["cottage_img"];?>" alt="cottage_name"><!-- maak image en naam dynamisch -->
+                        <img class="card-img-top" src="images/<?php echo $cottage["cottage_img"];?>" alt="<?php echo $cottage_name?>"><!-- maak image en naam dynamisch -->
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $cottage["cottage_name"]; ?></h5> <!-- maak naam dynamisch -->
                                 <p class="card-text"><?php echo $cottage["cottage_descr"];?></p> <!-- maak omschrijving dynamisch -->
